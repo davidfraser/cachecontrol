@@ -1,7 +1,10 @@
 import os
 import base64
 
-from cPickle import load, dump
+try:
+    from cPickle import load, dump
+except ImportError:
+    from pickle import load, dump
 
 from lockfile import FileLock
 
