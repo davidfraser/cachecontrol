@@ -19,7 +19,7 @@ class FileCache(object):
             os.mkdir(self.directory)
 
     def encode(self, x):
-        return base64.b64encode(x)
+        return base64.b64encode(x.encode("UTF-8")).decode("ascii")
 
     def _fn(self, name):
         return os.path.join(self.directory, self.encode(name))
